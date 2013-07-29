@@ -3,6 +3,7 @@ $(function() {
 });
 
 (function($) {
+	// Player initially based on http://www.inserthtml.com/2013/03/custom-html5-video-player/
 	$.fn.quickCastPlayer = function(options) {
 
 		// Add controls to mobile version and then return before quickcast player added
