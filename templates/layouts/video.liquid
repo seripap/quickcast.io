@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}QuickCast. Make. Publish. Share. 3 Minute Screencasts{% endblock %}</title>
+        <link rel="shortcut icon" type="image/ico" href="{{ "/assets/img/favicon.ico" | asset_url }}">
+        {{ "app.css" | asset_url | stylesheet_tag }}
+        <link rel="stylesheet" href="{{ "layout.css" | asset_url }}" media="(min-width:1em)">
+        {{ "modernizr.min.js" | asset_url | script_tag }}
+        <script type="text/javascript" src="//use.typekit.net/wom0nvr.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    </head>
+    <body>
+        <div class="wrapper">
+            {% block content %}{% endblock %}
+            {% include "footer-video" %}
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        {{ "video.js" | asset_url | script_tag }}
+        {% include "analytics" %}
+    </body>
+</html>

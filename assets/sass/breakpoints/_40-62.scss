@@ -1,0 +1,253 @@
+/*
+ * Breakpoint 40.62
+ */
+@if $debug {
+	.wrapper:after{
+		content:'min 40.62em - 650px';
+	}
+}
+
+
+
+/*
+ * Header
+ */
+.page-head{
+
+	.banner{
+		min-height:35em;
+
+		.position{
+			//border:1px solid red;
+			width:23em;
+			height:26em;
+			margin:-13em 0 0 -11.5em;
+		}
+
+		.svg{
+			width:13em;
+			height:13em;
+		}
+
+		h1{
+			@include font-size(33px);
+			line-height:1.3em;
+
+			.screencasts{
+				@include font-size(32px);
+				line-height:1.3em;
+			}
+		}
+
+		.btn{
+			@include font-size(25px);
+			line-height:1em;
+			padding:.4em 0;
+		}
+	}
+}
+
+
+
+/*
+ * Content: Index
+ */
+.content.make{
+	padding:2em 2em;
+
+	ol{
+		li:after{ 
+			@include font-size(50px);
+			top:.35em;
+	 	}
+
+		li{
+			.detail{
+				padding:0 0 0 4em;
+				width:70%;
+			}
+
+			h2{
+				@include font-size(20px);
+				line-height:1em;
+			}
+
+			p{
+				@include font-size(18px);
+				line-height:1.4em;
+			}
+
+			.download{
+				@include font-size(17px);
+				font-weight:700;
+				color:$brand-color;
+				position:absolute;
+				top:-.8em;
+				right:0;
+				text-decoration:none;
+				text-align:center;
+				width:10em;
+				margin:2em 0 0 3em;
+				display:inline-block;
+				background-color:transparent;
+				@include vendor(box-shadow, none);
+
+				/*&:hover{
+					background-color:transparent;
+				}*/
+
+				/*.logo{
+					@include vendor(border-radius,100%);
+					background-color:$brand-color;
+					height:6.5em;
+					width:6.5em;
+					display:inline-block;
+					margin-bottom:.5em;
+
+					svg{
+						width:100%;
+						height:100%;
+						display:block;
+					}
+				}*/
+
+				.txt{
+					display:block;
+				}
+			}
+
+			img{
+				width:10em;
+				position:absolute;
+				top:2em;
+				right:1em;
+			}
+		}
+
+		li:last-child{
+			border:0;
+		}
+	}
+}
+
+
+
+/*
+ * Content: Watch
+ */
+.content.watch{
+	padding:4em 2em;
+
+	.detail{
+		width:65%;
+	}
+
+	h1{
+		@include font-size(30px);
+		line-height:1.3em;
+	}
+
+	h2{
+		@include font-size(18px);
+		line-height:1.3em;
+	}
+
+	p{
+		@include font-size(18px);
+		line-height:1.3em;
+	}
+
+	ol li, ul li{
+		@include font-size(18px);
+		line-height:1.6em;
+	}
+
+	.tags{
+		@extend .cf;
+		position:absolute;
+		top:4.3em;
+		right:2em;
+		width:30%;
+		margin:0;
+
+		> span{
+			@include vendor(border-radius,4px);
+			@include font-size(13px);
+			line-height:1.2em;
+			background-color:$comp-color-1;
+			background-color:rgba(0,0,0,.2);
+			padding:.30em .6em;
+			text-transform:uppercase;
+			text-decoration:none;
+			margin:0 0 1em 1em;
+			font-weight:500;
+			display:inline-block;
+			color:$default-font-color;
+			float:right;
+		}
+
+		.share{
+			@extend .cf;
+			display:block;
+			float:none;
+			clear:both;
+			padding-top:1em;
+			text-align:right;
+		}
+
+		h3{
+			@include font-size(18px);
+			line-height:1.3em;
+			color:$comp-color;
+			margin-bottom:1em;
+		}
+
+		a{
+			@include font-size(18px);
+			display:block;
+			margin-top:1em;
+			font-weight:700;
+		}
+
+		a.embed{
+			span{
+				@include font-size(12px);
+			}
+		}
+	}
+}
+
+
+
+/*
+ * Content: General
+ */
+.content.general{
+
+	.body{
+		width:70%;
+	}
+
+	h1{
+		@include font-size(30px);
+		line-height:1.3em;
+	}
+
+	h2{
+		@include font-size(18px);
+		line-height:1.3em;
+	}
+
+	p{
+		@include font-size(18px);
+		line-height:1.4em;
+	}
+
+	ul,ol{
+
+		li{
+			@include font-size(18px);
+			line-height:1.6em;
+		}
+	}
+}

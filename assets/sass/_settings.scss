@@ -1,0 +1,23 @@
+/*
+ * Settings
+ */
+$base-font-size:		15px!default;
+$base-line-height:		23px!default;
+
+$default-face:			"futura-pt",sans-serif!default;
+
+$bgrnd-color:			#F9F9F9!default;
+$default-font-color:	#F9F9F9!default;
+$comp-color:			#313F3B!default;
+$brand-color:			#43AC74!default;
+$comp-color-1:			#C1C0B7!default;
+$comp-color-2:			#F3F3ED!default;
+$comp-color-3:			#E0DFDB!default;
+$comp-color-4:			#999999!default;
+$hover:					#4DC686!default;
+
+$base-spacing-unit:		$base-line-height!default;
+$half-spacing-unit:		$base-spacing-unit / 2!default;
+$line-height-ratio:		$base-line-height / $base-font-size;
+
+$debug:					false!default;

@@ -1,0 +1,215 @@
+/*
+ * Breakpoint min 30
+ */
+@if $debug {
+	.wrapper:after{
+		content:'min 30em - 480px';
+	}
+}
+
+
+
+/*
+ * Header: Logo;
+ */
+.page-head-general{
+	> div{
+		padding:1em 2em .5em 2em;
+	}
+}
+
+
+
+/*
+ * Header
+ */
+.page-head{
+
+	.banner{
+		min-height:31em;
+		
+		.position{
+			width:20em;
+			height:22em;
+			margin:-11em 0 0 -10em;
+		}
+
+		.svg{
+			width:12em;
+			height:12em;
+		}
+
+		h1{
+			@include font-size(28px);
+			line-height:1.3em;
+
+			.screencasts{
+				@include font-size(27px);
+				line-height:1.3em;
+			}
+		}
+
+		.btn{
+			@include font-size(23px);
+			line-height:1em;
+		}
+	}
+}
+
+
+
+/*
+ * Content: Index
+ */
+.content.make{
+	padding:1em 2em;
+
+	ol{
+		li:after{ 
+			@include font-size(40px);
+			top:.6em;
+	 	}
+
+		li{
+			.detail{
+				padding:0 0 0 3.5em;
+			}
+
+			h2{
+				@include font-size(20px);
+				line-height:1em;
+			}
+
+			p{
+				@include font-size(18px);
+				line-height:1.4em;
+			}
+
+			.download{
+				@include font-size(18px);
+			}
+		}
+
+		li:last-child{
+			border:0;
+		}
+	}
+}
+
+
+
+/*
+ * Content: Watch
+ */
+.content.watch{
+	padding:3em 2em;
+
+	.detail{
+		width:65%;
+	}
+
+	h1{
+		@include font-size(25px);
+		line-height:1.3em;
+	}
+
+	.tags{
+		@extend .cf;
+		position:absolute;
+		top:3.3em;
+		right:2em;
+		width:30%;
+		margin-top:0;
+
+		> span{
+			float:right;
+			margin:0 0 .5em .5em;
+		}
+
+		.share{
+			padding-top:1em;
+			text-align:right;
+		}
+	}
+}
+
+
+
+/*
+ * Content: General
+ */
+.content.general{
+	padding:2em 2em;
+
+	section{
+		margin-top:2em;
+		display:block;
+		padding-bottom:1em;
+
+		p{
+			margin-top:.6em;
+			position:relative;
+			padding-left:3em;
+			padding-top:.2em;
+		}
+
+		h2{
+			position:relative;
+			padding-left:3em;
+			padding-top:.2em;
+		}
+
+		h2:before{
+			@include font-size(30px);
+			line-height:1em;
+			color:$comp-color-1;
+			content:'Q.';
+			position:absolute;
+			top:0;
+			left:0;
+		}
+
+		p:before{
+			@include font-size(30px);
+			line-height:1em;
+			font-weight:700;
+			color:$comp-color-1;
+			content:'A.';
+			position:absolute;
+			top:0;
+			left:0;
+		}
+	}
+}
+
+
+
+/*
+ * Content: 404
+ */
+.content.not-found{
+	padding:3em 2em;
+
+	h1{
+		width:70%;
+	}
+
+	p{
+		width:70%;
+	}
+}
+
+
+
+/*
+ * Footer
+ */
+.page-foot{
+	padding:2em 2em 3em 2em;
+
+	a{
+		@include font-size(13px);
+		line-height:1.2em;
+		margin-right:1em;
+	}
+}

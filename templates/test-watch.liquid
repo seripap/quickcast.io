@@ -1,0 +1,42 @@
+{% layout "video" %}
+{% block content %}
+<div class="container">
+	<video data-intro="test" data-outro="out">
+		<source src="https://s3.amazonaws.com/quickcast/3/26/quickcast.mp4" type="video/mp4">
+		<source src="https://s3.amazonaws.com/quickcast/3/26/quickcast.webm" type="video/webm">
+	</video>
+</div>
+<div class="content watch">
+	<div class="detail">
+		<h1>Title of screencast here and can be fairly long</h1>
+		<h2>by neilkinnish &bull; 2 days ago &bull; 3245 views</h2>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+		<blockquote><p>&#8220;Lorem ipsum dolor sit amet&#8221;</p></blockquote>
+		<p><strong>Lorem ipsum</strong> dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+		<ol>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+			<li>Lorem ipsum dolor sit amet.</li>
+		</ol>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+		<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Page Headline&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+		<p><a href="http://docs.mixture.io">http://docs.mixture.io</a></p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+	</div>
+	<div class="tags">
+		<span>Example</span> <span>Screencast</span> <span>Analog</span> <span>Example</span> <span>Screencast</span> <span>Analog</span>
+		<div class="share">
+			<h3>Share</h3>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none" data-hashtags="quickcast">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<a href="#embed" class="embed"><span>Embed</span></a>			
+			<a href="http://quick.as/6732">quick.as/6732</a>	
+		</div>
+	</div>
+</div>
+{% endblock %}
