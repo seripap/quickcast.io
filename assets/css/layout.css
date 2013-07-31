@@ -126,20 +126,20 @@
    */
   .content.general {
     padding: 2em 2em; }
-    .content.general section {
+    .content.general .faq-section {
       margin-top: 2em;
       display: block;
       padding-bottom: 1em; }
-      .content.general section p {
+      .content.general .faq-section p {
         margin-top: .6em;
         position: relative;
         padding-left: 3em;
         padding-top: .2em; }
-      .content.general section h2 {
+      .content.general .faq-section h2 {
         position: relative;
         padding-left: 3em;
         padding-top: .2em; }
-      .content.general section h2:before {
+      .content.general .faq-section h2:before {
         font-size: 30px;
         font-size: 2rem;
         line-height: 1.53333;
@@ -149,7 +149,7 @@
         position: absolute;
         top: 0;
         left: 0; }
-      .content.general section p:before {
+      .content.general .faq-section p:before {
         font-size: 30px;
         font-size: 2rem;
         line-height: 1.53333;

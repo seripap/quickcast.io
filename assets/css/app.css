@@ -830,20 +830,28 @@ video {
     color: #313f3b;
     font-weight: 700;
     margin-bottom: .5em; }
-  .content.general section {
+  .content.general .section {
+    padding-top: 2em;
+    display: block; }
+    .content.general .section p {
+      margin-top: .6em;
+      padding-top: 0em; }
+    .content.general .section h2 {
+      padding-top: 0em; }
+  .content.general .faq-section {
     margin-top: 2em;
     display: block;
     padding-bottom: 1em; }
-    .content.general section p {
+    .content.general .faq-section p {
       margin-top: .6em;
       position: relative;
       padding-left: 2em;
       padding-top: 0em; }
-    .content.general section h2 {
+    .content.general .faq-section h2 {
       position: relative;
       padding-left: 2em;
       padding-top: 0em; }
-    .content.general section h2:before {
+    .content.general .faq-section h2:before {
       font-size: 20px;
       font-size: 1.33333rem;
       line-height: 1.15;
@@ -853,7 +861,7 @@ video {
       position: absolute;
       top: 0;
       left: 0; }
-    .content.general section p:before {
+    .content.general .faq-section p:before {
       font-size: 20px;
       font-size: 1.33333rem;
       line-height: 1.15;
@@ -875,7 +883,7 @@ video {
     font-size: 15px;
     font-size: 1rem;
     line-height: 1.53333;
-    line-height: 1.4em;
+    line-height: 1.5em;
     color: #999999;
     font-weight: 500;
     margin-top: 1em; }
@@ -1039,13 +1047,57 @@ h1 span {
     text-transform: uppercase; }
 
 .container.processing {
-  background-color: #50C0E6;
-  background-image: url("../img/processing.png");
+  background-color: #D97363;
+  min-height: 20em;
+  padding: 1em;
+  position: relative; }
+  .container.processing p {
+    font-weight: 700; }
+
+.container.processing:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../img/busy.png");
   background-repeat: no-repeat;
-  background-size: 50px 50px;
-  background-position: 50% 60%;
-  min-height: 10em;
-  padding: 1em; }
+  background-size: 100px 100px;
+  background-position: 50% 50%;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: rotate;
+  -moz-animation-name: rotate;
+  -o-animation-name: rotate;
+  animation-name: rotate;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 .container.failed {
   background-color: #D97363;

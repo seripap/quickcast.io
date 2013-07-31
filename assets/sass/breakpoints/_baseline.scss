@@ -530,7 +530,21 @@ video{
 		margin-bottom:.5em;
 	}
 
-	section{
+	.section{
+		padding-top:2em;
+		display:block;
+
+		p{
+			margin-top:.6em;
+			padding-top:0em;
+		}
+
+		h2{
+			padding-top:0em;
+		}
+	}
+
+	.faq-section{
 		margin-top:2em;
 		display:block;
 		padding-bottom:1em;
@@ -579,7 +593,7 @@ video{
 
 	p{
 		@include font-size(15px);
-		line-height:1.4em;
+		line-height:1.5em;
 		color:$comp-color-4;
 		font-weight:500;
 		margin-top:1em;
