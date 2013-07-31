@@ -1,8 +1,8 @@
 # quickcast.io site
 
-The quickcast.io site is built + hosted with [http://mixture.io](Mixture).
+The quickcast.io site is built + hosted with [Mixture](http://mixture.io).
 
-Please visit the [http://quickcast.io](QuickCast) site for links to the source for the Mac Application & QuickCast Viewer + API
+Please visit the [QuickCast](http://quickcast.io) site for links to the source for the Mac Application & QuickCast Viewer + API
 
 The MIT License (MIT)
 
