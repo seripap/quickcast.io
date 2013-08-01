@@ -177,6 +177,8 @@ $(function() {
 
 				$spc.addEventListener('timeupdate', timeUpdate);
 
+				$(".video").css("width","100%");
+				
 				$(window).resize(function(){
 					$(".video").css("width","100%");
 

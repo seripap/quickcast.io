@@ -197,6 +197,8 @@ n[e].height=t/" + ratio.toFixed(2) + "'px'}}n(),window.onresize=n,window.addEven
 
 				$spc.addEventListener('timeupdate', timeUpdate);
 
+				$(".video").css("width","100%");
+				
 				$(window).resize(function(){
 					$(".video").css("width","100%");
 
