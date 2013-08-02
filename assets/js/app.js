@@ -6,7 +6,7 @@ $(function() {
 	/mobile/i.test(navigator.userAgent) && !location.hash &&
 		setTimeout(function () { height = windowHeight(); $(".banner").css("height", height+1); /*window.scrollTo(0, 1);*/ }, 1000);​
 
-	!/mac ox x/i.test(navigator.userAgent) || /iphone|ipod|ipad/i.test(navigator.userAgent) &&
+	!/mac os x/i.test(navigator.userAgent) || /iphone|ipod|ipad/i.test(navigator.userAgent) &&
 		$(".btn").text("Find out more");
 
 	$(window).resize(function() {

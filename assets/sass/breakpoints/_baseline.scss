@@ -267,7 +267,7 @@ video{
 			}
 
 			.download{
-				@include font-size(15px);
+				@include font-size(14px);
 				@include vendor(border-radius,6px);
 				padding:.5em 0;
 				//background-color:$brand-color;

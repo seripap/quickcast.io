@@ -584,9 +584,9 @@ video {
         font-weight: 500;
         margin-top: 1em; }
       .content.make ol li .download {
-        font-size: 15px;
-        font-size: 1rem;
-        line-height: 1.53333;
+        font-size: 14px;
+        font-size: 0.93333rem;
+        line-height: 1.64286;
         -webkit-border-radius: 6px;
         -moz-border-radius: 6px;
         -ms-border-radius: 6px;
