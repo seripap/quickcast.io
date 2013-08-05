@@ -18,6 +18,13 @@ $(function() {
 			if(/chrome/i.test(navigator.userAgent)) {
 				var obj = $(this).find("source[type='video/webm']");
 				$(this).html("").append(obj);
+			}else{
+				var obj = $("video").find("source[type='video/mp4']");
+
+				if(/-small.mp4/i.test(obj[0].src)) {
+					obj[0].src = obj[0].src.replace('-small.mp4','.mp4');
+					alert(obj[0].src);
+				}
 			}
 
 			$(this)[0].load();
