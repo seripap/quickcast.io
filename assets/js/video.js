@@ -45,10 +45,8 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 			}else{
 				var obj = $("video").find("source[type='video/mp4']");
 
-				if(/-small.mp4/i.test(obj[0].src)) {
+				if(/-small.mp4/i.test(obj[0].src))
 					obj[0].src = obj[0].src.replace('-small.mp4','.mp4');
-					alert(obj[0].src);
-				}
 			}
 
 			$(this)[0].load();
