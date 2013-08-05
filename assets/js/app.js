@@ -14,7 +14,7 @@ $(function() {
 		$(".banner").css("height", height+1);​
 	});
 
-	var item = Math.floor(Math.random()*3);
+	var item = Math.floor(Math.random()*3)+1;
 
 	$(".btn").on("click", function(){
     	$('html, body').animate({
@@ -23,15 +23,18 @@ $(function() {
     	return false;
 	});
 
-	switch(item){
+	console.log(parseInt(item))
+
+	switch(parseInt(item)){
 		case 2:
 			$(".cc").attr("href", "http://doctype.me").text("Photo credit: Aleks Dorohovich");
 			break;
 		case 1:
+			$(".cc").attr("href", "http://alejandroescamilla.com").text("Photo credit: Alejandro Escamilla");
+			break;
+		case 3:
 			$(".cc").attr("href", "http://imluke.me").text("Photo credit: Luke Chesser");
 			break;
-		default:
-			$(".cc").attr("href", "http://alejandroescamilla.com").text("Photo credit: Alejandro Escamilla");
 	}
 
 	$(".banner").addClass("img-" + item);

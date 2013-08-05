@@ -27,9 +27,12 @@ n[e].height=t/" + ratio.toFixed(2) + "'px'}}n(),window.onresize=n,window.addEven
 		// Add controls to mobile version and then return before quickcast player added
 		// for now on mobile devices we just serve the standard html5 player
 		if (/mobile/i.test(navigator.userAgent)) {
+			var video_width = $("video").attr("data-width");
+			var video_height = $("video").attr("data-height");
+			var ratio = parseFloat(video_width/video_height);
 			$("video").attr("controls", true)
 				.attr("width", window.screen.width)
-				.attr("height", (window.screen.width / 1.6));
+				.attr("height", (window.screen.width / ratio.toFixed(2)));
 
 			return;
 		}

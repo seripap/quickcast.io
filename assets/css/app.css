@@ -416,11 +416,11 @@ video {
  */
 .page-head {
   position: relative; }
-  .page-head .banner.img-0 {
-    background-image: url("../img/1.jpg"); }
   .page-head .banner.img-1 {
-    background-image: url("../img/2.jpg"); }
+    background-image: url("../img/1.jpg"); }
   .page-head .banner.img-2 {
+    background-image: url("../img/2.jpg"); }
+  .page-head .banner.img-3 {
     background-image: url("../img/3.jpg"); }
   .page-head .banner {
     background-color: #313f3b;
