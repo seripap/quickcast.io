@@ -10,7 +10,7 @@ $(function() {
 			if (video_width > 300 && video_height > 300){
 				$(this).append("<textarea><iframe name='quickcast' src='http://" + window.location.host + "/embed" + window.location.pathname + "' scrolling='no' frameborder='0' width='100%' allowfullscreen></iframe><script>!function(){function n(){var n=document.getElementsByName('quickcast')
 for(var e in n){var t=n[e].offsetWidth
-n[e].height=t/" + ratio.toFixed(2) + "'px'}}n(),window.onresize=n,window.addEventListener('message',function(n){if(n.data.indexOf('//quick.as/') != -1)window.location.href=n.data},!1)}()
+n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEventListener('message',function(n){if(n.data.indexOf('//quick.as/') != -1)window.location.href=n.data},!1)}()
 </script></textarea>");
 			}else{
 				$(this).append("<textarea><iframe name='quickcast' src='http://" + window.location.host + "/embed" + window.location.pathname + "' scrolling='no' frameborder='0' width='" + video_width + "' height='" + video_height + "' allowfullscreen></iframe></textarea>");
@@ -39,7 +39,7 @@ n[e].height=t/" + ratio.toFixed(2) + "'px'}}n(),window.onresize=n,window.addEven
 		
 		return this.each(function() {
 			if(/chrome/i.test(navigator.userAgent)) {
-				var obj = $(this).find("source[type='video/webm']");
+				var obj = $(this).find("source[type='video/mpf']");
 				$(this).html("").append(obj);
 			}
 
