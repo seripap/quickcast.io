@@ -9,25 +9,29 @@ $(function() {
 		// Add controls to mobile version and then return before quickcast player added
 		// for now on mobile devices we just serve the standard html5 player
 		if (/mobile/i.test(navigator.userAgent)) {
-			$("video").css({ "min-width":"100%","width":"100%","height":"auto"});
 			$("video").attr("controls", true);
 			return;
 		}
 		
 		return this.each(function() {
-			if(/chrome/i.test(navigator.userAgent)) {
+
+			var $vid = $(this)[0];
+
+			if(/chrome|mozilla/i.test(navigator.userAgent)) {
 				var obj = $(this).find("source[type='video/webm']");
-				$(this).html("").append(obj);
+				$(this).children().remove();
+				$(this).append(obj);
 			}else{
-				var obj = $("video").find("source[type='video/mp4']");
+				var obj = $(this).find("source[type='video/mp4']");
 
-				if(/-small.mp4/i.test(obj[0].src))
-					obj[0].src = obj[0].src.replace('-small.mp4','.mp4');
+				if(/-small.mp4/i.test(obj.src))
+					obj.src = obj.src.replace('-small.mp4','.mp4');
+
+				$(this).children().remove();
+				$(this).append(obj);
 			}
-
-			$(this)[0].load();
 			
-			$(this)[0].addEventListener('loadeddata', function() {
+			$vid.addEventListener('loadeddata', function() {
 
 				var $this = $(this);
 
@@ -45,12 +49,9 @@ $(function() {
 				}
 
 				if ($micro === false){
-					$this.css({ "min-width":"100%","width":"100%","height":"auto","max-width":$video_width+"px"});
 					if ($video_intro != ""){
 						$(".play-button").append("<div><span>" + $video_intro + "</span></div>");
 					}
-				}else{
-					$this.css({ "width":"100%","height":"auto","max-width":$video_width+"px"});
 				}
 				
 				var $that = $this.parent('.video');
@@ -182,11 +183,12 @@ $(function() {
 
 				$spc.addEventListener('timeupdate', timeUpdate);
 
-				$(".video").css("width","100%");
-				
 				$(window).resize(function(){
-					$(".video").css("width","100%");
+					resize();
+				});
 
+				function resize()
+				{
 					if ($spc.currentTime >= $duration)
 						$spc.currentTime = 0;
 
@@ -201,7 +203,7 @@ $(function() {
 					$that.find('.progress-button').css({'left' : buttonPos+'px'});
 
 					bufferLength();
-				});
+				}
 
 				if ($micro === false){
 					$that.find('.player').css("opacity", 1);
@@ -302,6 +304,10 @@ $(function() {
 						if (buttonPos < 0) buttonPos = 0;
 						$that.find('.progress-button').css({'left' : buttonPos+'px'});
 					}	
+				});
+
+				$spc.addEventListener('playing', function() {	
+					resize();
 				});
 				
 				// When the video ends the play button becomes a pause button

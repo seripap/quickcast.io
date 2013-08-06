@@ -54,6 +54,14 @@ video{
   	display:inline-block;
   	overflow:hidden;
 	margin:0 auto;
+	width:100%;
+
+	video{
+		margin:0 auto;
+		height:auto;
+		width:100%;
+		min-width:100%;
+	}
 }
 
 .player {

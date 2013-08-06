@@ -21,37 +21,72 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 });
 
 (function($) {
+
 	// Player initially based on http://www.inserthtml.com/2013/03/custom-html5-video-player/
 	$.fn.quickCastPlayer = function(options) {
+
+		var video_width = $("video").attr("data-width");
+		var video_height = $("video").attr("data-height");
+		var ratio = parseFloat(video_width/video_height);
+
+		var video_class_width = $(".video").width();
+
+		var quotes = [ 
+			'It\'s all about speed. Hot, nasty, badass speed &mdash; Will Ferell',
+			'Life moves pretty fast. If you don\'t stop and look around once in a while, you could miss it &mdash; Ferris Bueller',
+			'I\'m too fast. I\'m too smart. I\'m too pretty &mdash; Muhammed Ali',
+			'Speed, it seems to me, provides the one genuinely modern pleasure &mdash; Aldous Huxley'
+		];
+
+		$("body.loading div.loader p").html(quotes[Math.floor(Math.random()*quotes.length)]);
 
 		// Add controls to mobile version and then return before quickcast player added
 		// for now on mobile devices we just serve the standard html5 player
 		if (/mobile/i.test(navigator.userAgent)) {
-			var video_width = $("video").attr("data-width");
-			var video_height = $("video").attr("data-height");
-			var ratio = parseFloat(video_width/video_height);
+			var sizes = $("body").width();
 			$("video").attr("controls", true)
-				.attr("width", window.screen.width)
-				.attr("height", (window.screen.width / ratio.toFixed(2)));
+				.attr("width", sizes)
+				.attr("height", (sizes / ratio.toFixed(2)));
+
+			$("body").removeClass("loading");
+			$("video").css("opacity",1);
+
+			$(window).resize(function(){
+				var sizes = $("body").width();
+
+				$("video").attr("width", sizes)
+					.attr("height", (sizes / ratio.toFixed(2)));
+			});
 
 			return;
 		}
 		
+		$(".video").css("width", video_class_width)
+				.css("height", (window.screen.height / ratio.toFixed(2)));
+
 		return this.each(function() {
 
-			if(/chrome/i.test(navigator.userAgent)) {
-				var obj = $(this).find("source[type='video/webm']");
-				$(this).html("").append(obj);
-			}else{
-				var obj = $("video").find("source[type='video/mp4']");
+			var $vid = $(this)[0];
 
-				if(/-small.mp4/i.test(obj[0].src))
-					obj[0].src = obj[0].src.replace('-small.mp4','.mp4');
+			if(/chrome|mozilla/i.test(navigator.userAgent)) {
+				var obj = $(this).find("source[type='video/webm']");
+				$(this).children().remove();
+				$(this).append(obj);
+			}else{
+				var obj = $(this).find("source[type='video/mp4']");
+
+				if(/-small.mp4/i.test(obj.src))
+					obj.src = obj.src.replace('-small.mp4','.mp4');
+
+				$(this).children().remove();
+				$(this).append(obj);
 			}
 
-			$(this)[0].load();
-			
-			$(this)[0].addEventListener('loadeddata', function() {
+			$vid.load();
+
+			setTimeout(function() { $("body").removeClass("loading"); }, 2500);
+
+			$vid.addEventListener('loadeddata', function() {
 
 				var $this = $(this);
 
@@ -69,12 +104,9 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 				}
 
 				if ($micro === false){
-					$this.css({ "min-width":"100%","width":"100%","height":"auto","max-width":$video_width+"px"});
 					if ($video_intro != ""){
 						$(".play-button").append("<div><span>" + $video_intro + "</span></div>");
 					}
-				}else{
-					$this.css({ "width":"100%","height":"auto","max-width":$video_width+"px"});
 				}
 				
 				var $that = $this.parent('.video');
@@ -206,11 +238,12 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 
 				$spc.addEventListener('timeupdate', timeUpdate);
 
-				$(".video").css("width","100%");
-				
 				$(window).resize(function(){
-					$(".video").css("width","100%");
+					resize();
+				});
 
+				function resize()
+				{
 					if ($spc.currentTime >= $duration)
 						$spc.currentTime = 0;
 
@@ -225,7 +258,7 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 					$that.find('.progress-button').css({'left' : buttonPos+'px'});
 
 					bufferLength();
-				});
+				}
 
 				if ($micro === false){
 					$that.find('.player').css("opacity", 1);
@@ -327,6 +360,10 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 						$that.find('.progress-button').css({'left' : buttonPos+'px'});
 					}	
 				});
+
+				$spc.addEventListener('playing', function() {	
+					resize();
+				});
 				
 				// When the video ends the play button becomes a pause button
 				$spc.addEventListener('ended', function() {	
@@ -389,8 +426,7 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 				$('.link').on("click", function() {
 					window.location.href = window.location.href;
 					return false;
-				});
-				
+				});				
 			});
 			
 		});

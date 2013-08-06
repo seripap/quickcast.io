@@ -13,7 +13,12 @@
         <script type="text/javascript" src="//use.typekit.net/wom0nvr.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     </head>
+    {% if mixture.url == "test-watch" %}
+    <body class="loading">
+        <div class="loader"><p></p><span></span></div>
+    {% else %}
     <body>
+    {% endif %}
         <div class="wrapper">
             {% block content %}{% endblock %}
             {% include "footer-video" %}
