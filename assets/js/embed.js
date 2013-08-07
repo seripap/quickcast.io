@@ -6,10 +6,26 @@ $(function() {
 	// Player initially based on http://www.inserthtml.com/2013/03/custom-html5-video-player/
 	$.fn.quickCastPlayer = function(options) {
 
+		var video_width = $("video").attr("data-width");
+		var video_height = $("video").attr("data-height");
+		var ratio = parseFloat(video_width/video_height);
+
 		// Add controls to mobile version and then return before quickcast player added
 		// for now on mobile devices we just serve the standard html5 player
 		if (/mobile/i.test(navigator.userAgent)) {
-			$("video").attr("controls", true);
+			var sizes = $("body").width();
+			$("video").attr("controls", true)
+				.attr("width", sizes)
+				.attr("height", (sizes / ratio.toFixed(2)));
+
+			$(window).resize(function() {
+				var sizes = $("body").width();
+				$("video").attr("width", sizes)
+					.attr("height", (sizes / ratio.toFixed(2)));
+			});
+
+			$("video").css({ "max-width": "100%" });
+			
 			return;
 		}
 		
@@ -17,7 +33,7 @@ $(function() {
 
 			var $vid = $(this)[0];
 
-			if(/chrome|mozilla/i.test(navigator.userAgent)) {
+			if(/chrome|firefox|opera/i.test(navigator.userAgent)) {
 				var obj = $(this).find("source[type='video/webm']");
 				$(this).children().remove();
 				$(this).append(obj);
@@ -40,6 +56,8 @@ $(function() {
 				var $video_intro = $this.attr("data-intro");
 				var $video_outro = $this.attr("data-outro");
 				var $micro = false;
+
+				//$vid.css({ "max-width": $video_width + "px" });
 
 				if ($video_width <= 300 || $video_height <= 300){
 					$micro = true;

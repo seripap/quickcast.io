@@ -68,7 +68,7 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 
 			var $vid = $(this)[0];
 
-			if(/chrome|mozilla/i.test(navigator.userAgent)) {
+			if(/chrome|firefox|opera/i.test(navigator.userAgent)) {
 				var obj = $(this).find("source[type='video/webm']");
 				$(this).children().remove();
 				$(this).append(obj);
@@ -99,6 +99,7 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 				if ($video_width <= 300 || $video_height <= 300){
 					$micro = true;
 					$this.wrap('<div class="video micro"></div>');
+					$(".video").css("max-width", $video_width + "px");
 				}else{
 					$this.wrap('<div class="video"></div>');
 				}
