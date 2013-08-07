@@ -61,8 +61,11 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 			return;
 		}
 		
-		$(".video").css("width", video_class_width)
-				.css("height", (window.screen.height / ratio.toFixed(2)));
+		$(".video").css({
+			"width": video_class_width + "px",
+			"height": (window.screen.height / ratio.toFixed(2)) + "px",
+			"max-width": video_width + "px"
+		});
 
 		return this.each(function() {
 
