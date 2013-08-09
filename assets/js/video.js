@@ -61,11 +61,11 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 			return;
 		}
 		
-		$(".video").css({
+		/*$(".video").css({
 			"width": video_class_width + "px",
 			"height": (window.screen.height / ratio.toFixed(2)) + "px",
 			"max-width": video_width + "px"
-		});
+		});*/
 
 		return this.each(function() {
 
@@ -102,10 +102,11 @@ n[e].height=t/" + ratio.toFixed(2) + "+'px'}}n(),window.onresize=n,window.addEve
 				if ($video_width <= 300 || $video_height <= 300){
 					$micro = true;
 					$this.wrap('<div class="video micro"></div>');
-					$(".video").css("max-width", $video_width + "px");
 				}else{
 					$this.wrap('<div class="video"></div>');
 				}
+
+				$(".video").css("max-width", $video_width + "px");
 
 				if ($micro === false){
 					if ($video_intro != ""){
